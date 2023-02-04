@@ -1,0 +1,20 @@
+body {
+    display: grid;
+}
+
+.card {
+    place-self: center;
+}
+
+button {
+    height: auto;
+    width: auto;
+    border-radius: 10;
+    margin: 0 auto;
+    place-self: center;
+    background-color: antiquewhite;
+}
+
+.make_color {
+    background-color: rgb(223, 188, 255);
+}
