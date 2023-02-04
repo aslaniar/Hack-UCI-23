@@ -6,14 +6,11 @@ body {
     place-self: center;
 }
 
-button {
-    height: auto;
-    width: auto;
-    border-radius: 10;
-    margin: 0 auto;
-    place-self: center;
-    background-color: antiquewhite;
+form.ui.form input[type="text"] {
+    width: 262px;
 }
+
+form.ui.card 
 
 .make_color {
     background-color: rgb(223, 188, 255);
@@ -22,3 +19,11 @@ button {
 .center {
     text-align: center;
 }
+
+.visibility {
+    visibility: hidden;
+}
+
+.enter-width {
+    width: 105px;
+} 
