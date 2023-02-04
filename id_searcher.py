@@ -13,7 +13,6 @@ def find_id(token, user_input):
                 n = x.index(k)
                 x[n] = "%20"
         user_input = "".join(x)
-    print(user_input)
 
     payload = ""
 
