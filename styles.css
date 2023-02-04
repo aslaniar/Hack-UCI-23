@@ -18,3 +18,7 @@ button {
 .make_color {
     background-color: rgb(223, 188, 255);
 }
+
+.center {
+    text-align: center;
+}

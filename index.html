@@ -22,23 +22,22 @@
     
 </head>
 <body>
-    <div class = "ui card">
+    <div class = "ui card" id="thecard">
         <div class="ui content">
             <h1> Artist Locus</h1>
 
-            <form class="ui form make_color" id="artist" onsubmit="return false" onkeypress="clickPress(event)">
+            <form class="ui form" id="artist" onsubmit="return false" onkeypress="clickPress(event)">
                 <div class="ui field">
                     <label> Artist Name</label>
                     <input id = "text_box" type="text" placeholder="Enter an artist's name..." />
                 </div>
-                <div class="ui animated button" tabindex="0" onclick="artistsearch(document.getElementById('text_box'))">
+                <div class="ui fluid animated button center" tabindex="0" onclick="OnButtonPress()">
                     <div class="visible content">Let's Go!</div>
                     <div class="hidden content">
                       <i class="right arrow icon"></i>
                     </div>
                   </div>
             </form> 
-            
         </div>
         </div>
     </body>
