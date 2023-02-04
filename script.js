@@ -17,7 +17,8 @@ function clickPress(event) {
     }
 }
 
-function erase(item) {
-    item.remove();
-    create_rest()
+function erase(div1, div2) {
+    div1.style.display = 'none';
+    div2.style.display = 'visible';
+    // create_rest()
 }
