@@ -1,7 +1,7 @@
 import http.client
 import json
 
-def generateToken() -> dict:
+def create_token() -> str:
     conn = http.client.HTTPSConnection("accounts.spotify.com")
 
     payload = "grant_type=client_credentials"
@@ -18,7 +18,5 @@ def generateToken() -> dict:
     data = res.read()
 
     #dictionary = data.decode("utf-8")
-    return json.loads(data.decode("utf-8"))
-
-a = generateToken()
-print(a["access_token"])
+    n = json.loads(data.decode("utf-8"))
+    return n["access_token"]
