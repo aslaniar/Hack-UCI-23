@@ -5,6 +5,16 @@ def find_id(token, user_input):
     conn = http.client.HTTPSConnection("api.spotify.com")
     user_input = user_input.strip("\n")
 
+    if " " in user_input:
+        x = list(user_input)
+
+        for k in x:
+            if k == " ":
+                n = x.index(k)
+                x[n] = "%20"
+        user_input = "".join(x)
+    print(user_input)
+
     payload = ""
 
     headers = {
