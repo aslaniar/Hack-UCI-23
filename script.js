@@ -5,21 +5,20 @@ function artistsearch(artist) {
 function OnButtonPress() {
     var artistname = document.getElementById('text_box').value
     callapi(artistname);
-    erase(document.getElementById('div1'), document.getElementById('div2'));
+    erase(document.getElementById('div1'), document.getElementById('div2'), document.getElementById('div3'));
 }
 
 
 function clickPress(event) {
     if (event.key == "Enter") {
-        var artistname = document.getElementById('text_box').value
-        callapi(artistname);
-        erase(document.getElementById('div1'), document.getElementById('div2'))
+        OnButtonPress()
     }
 }
 
-function erase(div1, div2) {
+function erase(div1, div2, div3) {
     div1.style.display = 'none';
     div2.style.visibility = 'visible';
+    div3.style.visibility = 'visible';
     // create_rest()
 }
 
