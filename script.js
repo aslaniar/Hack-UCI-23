@@ -76,14 +76,14 @@ function Interested(choice) {
     ShiftIt()
 }
     else {
-        window.alert("Thats all we got!")
+        window.alert("Thats all we got! Enjoy your playlist!")
     }
 }
 
 function play_song() {
     var soundName = response_list[0][4];
     if (soundName == null) {
-        window.alert("Sorry! There's no preview for this! (lowkey think its a banger tho")
+        window.alert("Sorry! There's no preview for this! (lowkey think its a banger tho)")
     }
     else {
         // console.log(soundName);
