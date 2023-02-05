@@ -16,4 +16,6 @@ def main(artist):
     print(recom)
     return recom
 
+#recom format: [Track name, Album cover link, Album name, Artist name, 30-sec link, time duration]
+
 #print(json.dumps(recom, indent=4))

@@ -25,6 +25,12 @@ def recommendations(token, uri):
         temp.append(n["tracks"][i]["album"]["images"][0]['url'])
         temp.append(n["tracks"][i]["album"]["name"])
         temp.append(n["tracks"][i]["artists"][0]["name"])
+        temp.append(n['tracks'][i]["preview_url"])
+        mili = n['tracks'][i]["duration_ms"]
+        min = mili / 1000 / 60
+        sec = mili / 1000 % 60
+        temp.append(f'{int(min)}:{int(sec)}')
+
         ls.append(temp)
 
     return ls
