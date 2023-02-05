@@ -13,5 +13,6 @@ CORS(app)
 def get_artist_name():
     name = request.args.get('artist')
     print(name)
+    print(f"~" * 300)
     info = main.main(name)
     return jsonify({"message": name, "info": info})
