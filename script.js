@@ -17,9 +17,11 @@ function clickPress(event) {
     }
 }
 
-function erase(div1, div2) {
+function erase(div1, div2, div3, div4) {
     div1.style.display = 'none';
     div2.style.visibility = 'visible';
+    div3.style.visibility = 'visible';
+    div4.style.visibility = 'visible';
     // div3.style.visibility = 'visible';
     console.log(response_list[0])
     document.getElementById('album_art').src = response_list[0][1]
@@ -36,7 +38,7 @@ function callapi(artist) {
         
         console.log(response); 
         response_list = response["info"];
-        erase(document.getElementById('div1'), document.getElementById('div2'));})
+        erase(document.getElementById('div1'), document.getElementById('div2'), document.getElementById('div3'), document.getElementById('div4'));})
     }
 
 function ShiftIt() {
@@ -48,14 +50,16 @@ function ShiftIt() {
 }
 
 function Interested(choice) {
-    var album_art = document.getElementById('album_art').value
-    var song_name = document.getElementById('song_title').value
-    var artist_name = document.getElementById('artist_name').value
-    var album_name = document.getElementById('album_name').value
+    let album_art = document.getElementById('album_art')
+    let song_name = document.getElementById('song_title').innerHTML
+    let artist_name = document.getElementById('artist_name').innerHTML
+    let album_name = document.getElementById('album_name').innerHTML
+    let song_info = [song_name, artist_name, album_name]
     if (choice) {
         console.log("Liked.")
-        liked_songs.push([song_name, artist_name, album_art])
+        liked_songs.push(song_info)
         console.log(liked_songs) // finish this
+        document.getElementById('div4').innerHTML = song_name
     }
     ShiftIt()
 }
