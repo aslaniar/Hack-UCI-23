@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>Artist Display</title>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <!-- ADD SEMANTIC UI LIBRARY SOURCE CODE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
@@ -17,55 +18,67 @@
         integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link href="styles.css" type = "text/css" rel="stylesheet"> </link>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    </link>
     <script src="./script.js"></script>
-    
+
 </head>
+
 <body>
-    
-    <div class = "ui card" id="div1">
+
+    <div class="ui card" id="div1">
         <div class="ui content">
             <h1> Artist Locus</h1>
 
             <form class="ui form" id="artist" onsubmit="return false" onkeypress="clickPress(event)">
-                <label> Artist Name</label> 
-                    <input id = "text_box" type="text" placeholder="Enter an artist's name..." />
-                        <!-- <div class="ui animated button" tabindex="0" onclick="OnButtonPress()">
+                <label> Artist Name</label>
+                <input id="text_box" type="text" placeholder="Enter an artist's name..." />
+                <!-- <div class="ui animated button" tabindex="0" onclick="OnButtonPress()">
                             <div class="visible content">Search</div>
                             <div class="hidden content">
                             <i class="right arrow icon"></i>
                             </div> -->
-                    <!-- <button class="ui button" tabindex="" onclick="OnButtonPress()"></button> -->
-                </div>
-                <div class="ui fluid animated button center" tabindex="0" onclick="OnButtonPress()">
-                    <div class="visible content">Let's Go!</div>
-                    <div class="hidden content">
-                      <i class="right arrow icon"></i>
-                    </div>
-                  </div>
-            </form> 
+                <!-- <button class="ui button" tabindex="" onclick="OnButtonPress()"></button> -->
         </div>
-    <!-- <div id="container"> -->
-    <div class = "ui card visibility" id="div2">
-        <div class="ui content">
-        <img class="ui medium rounded image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.K-1eQTtjaBb3pCxMoc0AuAHaHa%26pid%3DApi&f=1&ipt=e2dac1567bbfc72ff55d6e8b1b2e7eee793ddcc1bd79cc586d34c8ef3a09a06d&ipo=images">        
-        
+        <div class="ui fluid animated button center" tabindex="0" onclick="OnButtonPress()">
+            <div class="visible content">Let's Go!</div>
+            <div class="hidden content">
+                <i class="right arrow icon"></i>
+            </div>
+        </div>
+        </form>
     </div>
-</div>
+    <!-- <div id="container"> -->
+    <div class="ui card visibility" id="div2" style="width: 650px">
 
-<!--<div class="", id="buttons"> -->
-<div class="grid-container" id = "div3 float_left">
-    <button class="massive circular ui icon button">
-        <i class="icon left arrow icon"></i>
-    </button>
+        <div class="ui content">
+            <div class="grid-container visible" id="div3 float_left">
+                <button class="massive circular ui icon button" style="height: min-content; place-self: center;">
+                    <i class="icon close icon icon"></i>
+                </button>
+                <img class="ui massive rounded image"
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.K-1eQTtjaBb3pCxMoc0AuAHaHa%26pid%3DApi&f=1&ipt=e2dac1567bbfc72ff55d6e8b1b2e7eee793ddcc1bd79cc586d34c8ef3a09a06d&ipo=images">
 
-    <button class="massive circular ui icon button">
-        <i class="icon right arrow icon"></i>
-    </button>
-</div>
+                <button class="massive circular ui icon button" style="height: min-content; place-self: center;">
+                    <i class="icon check icon"></i>
+                </button>
+            </div>
+        <div id="song_title">
+            <text>Alone Again</text>
+        </div>
+        <div>
+            <text> The Weeknd </text>  
+        </div>
+        <div>
+            <text> After Hours </text>
+        </div>
+        </div>  
+        
+        </div>
+    </div>
 
 
-</div>
+    </div>
 </body>
-    
+
 </html>
