@@ -31,7 +31,8 @@ def recommendations(token, uri):
         sec = mili / 1000 % 60
         temp.append(f'{int(min)}:{int(sec)}')
 
-        ls.append(temp)
+        if temp[4] != None:
+            ls.append(temp)
 
     return ls
 
