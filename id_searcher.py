@@ -27,8 +27,7 @@ def find_id(token, user_input):
     data = res.read()
 
     i = json.loads(data.decode("utf-8"))
-    #uri = i['artists']['items'][9]["id"]
-    #return uri.strip("\n")
+    
     return i['artists']['items'][0]['id']
 
 

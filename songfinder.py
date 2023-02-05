@@ -14,4 +14,18 @@ def recommendations(token, uri):
     data = res.read()
 
     n = json.loads(data.decode("utf-8"))
-    return n
+
+    num = len(n["tracks"])
+
+    ls = []
+
+    for i in range(num):
+        temp = []
+        temp.append(n["tracks"][i]["name"])
+        temp.append(n["tracks"][i]["album"]["images"][0]['url'])
+        temp.append(n["tracks"][i]["album"]["name"])
+        temp.append(n["tracks"][i]["artists"][0]["name"])
+        ls.append(temp)
+
+    return ls
+

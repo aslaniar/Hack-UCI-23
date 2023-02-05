@@ -10,7 +10,9 @@ user_input = input()
 uri = id_searcher.find_id(token, user_input)
 
 #Returns dictionary with recommendations
-recom = songfinder.recommendations(token, uri)
-#print(recom)
 
-print(json.dumps(recom, indent=4))
+
+recom = songfinder.recommendations(token, uri)
+print(recom)
+
+#print(json.dumps(recom, indent=4))
