@@ -24,15 +24,12 @@ function erase(div1, div2, div3, div4) {
     div2.style.visibility = 'visible';
     div3.style.visibility = 'visible';
     div4.style.visibility = 'visible';
-    // div3.style.visibility = 'visible';
     console.log(response_list[0])
-    ifNone()
+    ShiftIt()
     document.getElementById('album_art').src = response_list[0][1]
     document.getElementById('song_title').innerHTML = response_list[0][0]
     document.getElementById('artist_name').innerHTML = response_list[0][3]
     document.getElementById('album_name').innerHTML = response_list[0][2]
-    response_list.shift()
-    ifNone()
     // create_rest()
 }
 
@@ -46,24 +43,22 @@ function callapi(artist) {
     }
 
 
-function ifNone() {
-    while (typeof response_list[0][4] == null) {
-        response_list.shift()
-    }
-}
-
 
 function ShiftIt() {
+    response_list.shift()
     document.getElementById('album_art').src = response_list[0][1]
     document.getElementById('song_title').innerHTML = response_list[0][0]
     document.getElementById('artist_name').innerHTML = response_list[0][3]
     document.getElementById('album_name').innerHTML = response_list[0][2]
-    response_list.shift()
-    ifNone()
+    // response_list.shift()
+    // ifNone()
 
 }
 
 function Interested(choice) {
+    // playing = false;
+    play_song();
+    response_list.shift()
     let album_art = document.getElementById('album_art')
     let song_name = document.getElementById('song_title').innerHTML
     let artist_name = document.getElementById('artist_name').innerHTML
@@ -80,17 +75,22 @@ function Interested(choice) {
 
 function play_song() {
     var soundName = response_list[0][4];
-    console.log(soundName);
-    if (playing) {
-        soundPlayer.pause()
-        playing = false;
-        console.log(playing)
+    if (soundName == null) {
+        window.alert("Sorry! There's no preview for this! (lowkey think its a banger tho")
     }
     else {
-    soundPlayer = new Audio(soundName);
-    soundPlayer.play();
-    playing = true;
-    console.log(playing)
+        console.log(soundName);
+        if (playing) {
+            soundPlayer.pause()
+            playing = false;
+            console.log(playing)
+        }
+        else {
+        soundPlayer = new Audio(soundName);
+        soundPlayer.play();
+        playing = true;
+        console.log(playing)
+        }
     }
 }
 
