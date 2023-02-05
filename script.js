@@ -1,5 +1,7 @@
 let liked_songs = []
 let response_list = []
+let playing = false;
+let soundPlayer; 
 
 function artistsearch(artist) {
     console.log(artist.value);
@@ -24,11 +26,13 @@ function erase(div1, div2, div3, div4) {
     div4.style.visibility = 'visible';
     // div3.style.visibility = 'visible';
     console.log(response_list[0])
+    ifNone()
     document.getElementById('album_art').src = response_list[0][1]
     document.getElementById('song_title').innerHTML = response_list[0][0]
     document.getElementById('artist_name').innerHTML = response_list[0][3]
     document.getElementById('album_name').innerHTML = response_list[0][2]
     response_list.shift()
+    ifNone()
     // create_rest()
 }
 
@@ -41,12 +45,22 @@ function callapi(artist) {
         erase(document.getElementById('div1'), document.getElementById('div2'), document.getElementById('div3'), document.getElementById('div4'));})
     }
 
+
+function ifNone() {
+    while (typeof response_list[0][4] == null) {
+        response_list.shift()
+    }
+}
+
+
 function ShiftIt() {
     document.getElementById('album_art').src = response_list[0][1]
     document.getElementById('song_title').innerHTML = response_list[0][0]
     document.getElementById('artist_name').innerHTML = response_list[0][3]
     document.getElementById('album_name').innerHTML = response_list[0][2]
     response_list.shift()
+    ifNone()
+
 }
 
 function Interested(choice) {
@@ -63,3 +77,27 @@ function Interested(choice) {
     }
     ShiftIt()
 }
+
+function play_song() {
+    var soundName = response_list[0][4];
+    console.log(soundName);
+    if (playing) {
+        soundPlayer.pause()
+        playing = false;
+        console.log(playing)
+    }
+    else {
+    soundPlayer = new Audio(soundName);
+    soundPlayer.play();
+    playing = true;
+    console.log(playing)
+    }
+}
+
+// function pause_song(sound) {
+//     sound.pause()
+// }
+// function pause_song() {
+//     var song = response_list[0][4]
+//     song.pause()
+// }
