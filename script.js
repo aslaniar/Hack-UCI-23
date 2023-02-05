@@ -111,7 +111,7 @@ function play_song() {
 
 function incidentList() {
     console.log(liked_songs.length)
-    liked_str += liked_songs[0][0] + '<br>'
+    liked_str += liked_songs[0][0] + ' - ' + liked_songs[0][1] + '<br>'
     
     console.log(liked_str)
     $("div4").text(liked_str);
