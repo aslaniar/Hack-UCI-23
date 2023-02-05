@@ -23,6 +23,8 @@ def recommendations(token, uri):
         temp = []
         temp.append(n["tracks"][i]["name"])
         temp.append(n["tracks"][i]["album"]["images"][0]['url'])
+        temp.append(n["tracks"][i]["album"]["name"])
+        temp.append(n["tracks"][i]["artists"][0]["name"])
         ls.append(temp)
 
     return ls
