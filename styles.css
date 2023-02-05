@@ -1,9 +1,13 @@
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: initial;
+    padding: 96px 0;
 }
 
 .card {
     place-self: center;
+    padding-top: 96px;
 }
 
 form.ui.form input[type="text"] {

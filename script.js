@@ -1,4 +1,5 @@
 let liked_songs = []
+let liked_str = ""
 let response_list = []
 let playing = false;
 let soundPlayer; 
@@ -56,8 +57,9 @@ function ShiftIt() {
 }
 
 function Interested(choice) {
-    // playing = false;
-    play_song();
+    if (playing) {
+        play_song(); }
+    if (! checkifDone()) {
     response_list.shift()
     let album_art = document.getElementById('album_art')
     let song_name = document.getElementById('song_title').innerHTML
@@ -68,9 +70,14 @@ function Interested(choice) {
         console.log("Liked.")
         liked_songs.push(song_info)
         console.log(liked_songs) // finish this
-        document.getElementById('div4').innerHTML = song_name
+        incidentList()
+        document.getElementById('div4').innerHTML = liked_str
     }
     ShiftIt()
+}
+    else {
+        window.alert("Thats all we got!")
+    }
 }
 
 function play_song() {
@@ -79,7 +86,7 @@ function play_song() {
         window.alert("Sorry! There's no preview for this! (lowkey think its a banger tho")
     }
     else {
-        console.log(soundName);
+        // console.log(soundName);
         if (playing) {
             soundPlayer.pause()
             playing = false;
@@ -101,3 +108,21 @@ function play_song() {
 //     var song = response_list[0][4]
 //     song.pause()
 // }
+
+function incidentList() {
+    console.log(liked_songs.length)
+    liked_str += liked_songs[0][0] + '<br>'
+    
+    console.log(liked_str)
+    $("div4").text(liked_str);
+    liked_songs.shift()
+}
+
+function checkifDone() {
+    if (response_list[0] == null) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
