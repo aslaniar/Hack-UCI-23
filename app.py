@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request 
 from flask_cors import CORS
+import main
 
 app = Flask(__name__)
 CORS(app)
@@ -12,4 +13,5 @@ CORS(app)
 def get_artist_name():
     name = request.args.get('artist')
     print(name)
-    return jsonify({"message": name})
+    info = main.main(name)
+    return jsonify({"message": name, "info": info})

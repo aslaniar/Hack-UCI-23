@@ -1,3 +1,5 @@
+let liked_songs = {} 
+
 function artistsearch(artist) {
     console.log(artist.value);
 }
@@ -27,5 +29,16 @@ function callapi(artist) {
     fetch("http://127.0.0.1:5000?artist=" + artist).then(res => res.json() ).then(response => {
         console.log(response)
     })
+
+}
+
+function Interested(choice) {
+    var album_art = document.getElementById('album_art').value
+    var song_name = document.getElementById('song_title').value
+    var artist_name = document.getElementById('artist_name').value
+    var album_name = document.getElementById('album_name').value
+    if (choice) {
+        liked_songs.append()
+    }
 
 }
